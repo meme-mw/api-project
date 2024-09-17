@@ -1,4 +1,12 @@
 
+function display(){
+  console.log("m");
+  let links=document.querySelectorAll(".nav-link");
+  if(links[0].style.display==="block"){
+    links.forEach((e)=>{e.style.display="none";})
+  }else{
+  links.forEach((e)=>{e.style.display="block";e.style.width="100%";e.style.textAlign="center";document.querySelector("#navbar").style="position:absolute;width:100vw;display:flex;justify-content:space-around !important;top:3.5rem;left:0"});}
+}
 
 let submit=document.querySelector("#submit");
 async function logIn(){

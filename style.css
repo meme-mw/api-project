@@ -57,6 +57,7 @@ form{
   justify-content: space-around;
   flex-direction: column;
   align-items: center;
+  margin-top:2rem;
 }
 textarea {
     margin: 20px 0;
@@ -90,9 +91,27 @@ h1{
 .card{
   margin:2rem auto;
 }
+table{
+  width:100%;
+
+  
+}
+th,td{
+  margin-top:1rem;
+  
+  width:100%;
+  
+}
+th{
+  background-color: #F6F7F8;
+}
 footer{
   background-color: #06b5ef;
   color:white;
+  padding:1rem 0;
+}
+.add{
+  height:70vh;
 }
   @media screen and (max-width: 600px) {
     #toggler{
@@ -100,6 +119,17 @@ footer{
       }
       #navbar .nav-link{
         display:none; 
-       
+       background-color: #F6F7F8;
+      }
+      #navbar{
+        background-color:#F6F7F8;
+      }
+      form{
+      height:30vh;
+      margin-top:40vh;
+      transform: translate(0,-50%);
+      }
+      .add{
+        height:70vh;
       }
   }

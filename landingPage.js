@@ -1,9 +1,11 @@
 function display(){
     console.log("m");
     let links=document.querySelectorAll(".nav-link");
-    links.forEach((e)=>{e.style.display="block";document.querySelector("#navbar").style="position:absolute;width:80%;display:flex;top:3.5rem;"});
-}
-
+    if(links[0].style.display==="block"){
+      links.forEach((e)=>{e.style.display="none";})
+    }else{
+    links.forEach((e)=>{e.style.display="block";e.style.width="100%";e.style.textAlign="center";document.querySelector("#navbar").style="position:absolute;width:100vw;display:flex;justify-content:space-around !important;top:3.5rem;left:0"});}
+  }
 async function getPosts(){
     await fetch(`https://66e88223b17821a9d9dcefeb.mockapi.io/users/posts`, {
         method: 'GET',
@@ -24,6 +26,7 @@ async function getPosts(){
               <h5 class="card-title">${e.title}</h5>
               
               <p>${e.content}</p>
+              
             </div>
           </div>
        `;
@@ -39,3 +42,18 @@ async function getPosts(){
 
 
 getPosts();
+
+function del(id){
+    fetch(`https://66e88223b17821a9d9dcefeb.mockapi.io/users/posts/${id}`, {
+        method: 'DELETE',
+      }).then(res => {
+        if (res.ok) {
+            return res.json();
+        }
+        // handle error
+      }).then(task => {
+        // Do something with deleted task
+      }).catch(error => {
+        // handle error
+      })
+}
